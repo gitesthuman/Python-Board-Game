@@ -1,0 +1,266 @@
+27 34
+Lis 12 25 0 3
+Lis 24 18 0 3
+Lis 11 8 0 3
+Lis 29 26 0 3
+Lis 13 12 0 3
+Lis 6 1 0 3
+Lis 9 8 0 3
+Lis 19 17 0 3
+Lis 2 2 0 3
+Lis 30 13 0 3
+Lis 20 20 0 3
+Lis 4 16 0 3
+Lis 20 8 0 3
+Lis 8 20 0 3
+Lis 7 7 0 3
+Lis 15 2 0 3
+Lis 0 16 0 3
+Lis 17 15 0 3
+Lis 29 24 0 3
+Lis 30 20 0 3
+Lis 1 5 0 3
+Lis 13 5 0 3
+Lis 4 13 0 3
+Lis 17 10 0 3
+Wilk 27 2 0 9
+Wilk 19 10 0 9
+Wilk 6 10 0 9
+Wilk 7 2 0 9
+Wilk 0 18 0 9
+Wilk 27 10 0 9
+Wilk 29 20 0 9
+Wilk 15 11 0 9
+Wilk 22 14 0 9
+Wilk 5 1 0 9
+Wilk 11 25 0 9
+Wilk 0 13 0 9
+Wilk 10 19 0 9
+Wilk 9 6 0 9
+Wilk 13 13 0 9
+Wilk 18 12 0 9
+Wilk 2 24 0 9
+Wilk 27 18 0 9
+Wilk 29 22 0 9
+Wilk 9 7 0 9
+Wilk 33 19 0 9
+Wilk 6 24 0 9
+Wilk 0 20 0 9
+Wilk 13 19 0 9
+Cz³owiek 11 5 0 5 0 0
+Antylopa 20 9 0 4
+CyberOwca 21 1 0 11
+Owca 16 12 0 4
+Antylopa 18 9 0 4
+CyberOwca 19 1 0 11
+Owca 31 6 0 4
+Antylopa 21 23 0 4
+CyberOwca 17 16 0 11
+Owca 14 19 0 4
+Antylopa 15 26 0 4
+CyberOwca 4 14 0 11
+Owca 9 21 0 4
+Antylopa 24 4 0 4
+CyberOwca 18 13 0 11
+Owca 15 1 0 4
+Antylopa 5 5 0 4
+CyberOwca 30 15 0 11
+Owca 18 21 0 4
+Antylopa 26 23 0 4
+CyberOwca 11 17 0 11
+Owca 33 26 0 4
+Antylopa 10 18 0 4
+CyberOwca 32 25 0 11
+Owca 7 17 0 4
+Antylopa 12 11 0 4
+CyberOwca 6 0 0 11
+Owca 7 14 0 4
+Antylopa 27 11 0 4
+CyberOwca 14 20 0 11
+Owca 20 1 0 4
+Antylopa 1 23 0 4
+CyberOwca 11 22 0 11
+Owca 7 9 0 4
+Antylopa 5 22 0 4
+CyberOwca 19 20 0 11
+Owca 30 9 0 4
+Antylopa 2 19 0 4
+CyberOwca 8 3 0 11
+Owca 17 17 0 4
+Antylopa 12 2 0 4
+CyberOwca 31 23 0 11
+Owca 10 10 0 4
+Antylopa 7 13 0 4
+CyberOwca 12 12 0 11
+Owca 4 12 0 4
+Antylopa 9 0 0 4
+CyberOwca 18 23 0 11
+Owca 16 7 0 4
+Antylopa 5 11 0 4
+CyberOwca 28 16 0 11
+Owca 19 3 0 4
+Antylopa 8 15 0 4
+CyberOwca 5 25 0 11
+Owca 8 0 0 4
+Antylopa 23 5 0 4
+CyberOwca 4 7 0 11
+Owca 29 1 0 4
+Antylopa 4 15 0 4
+CyberOwca 21 25 0 11
+Owca 16 24 0 4
+Antylopa 23 2 0 4
+CyberOwca 20 7 0 11
+Owca 14 17 0 4
+Antylopa 24 10 0 4
+CyberOwca 17 11 0 11
+Owca 0 9 0 4
+Antylopa 24 23 0 4
+CyberOwca 1 14 0 11
+Owca 23 6 0 4
+Antylopa 7 4 0 4
+CyberOwca 7 0 0 11
+Owca 23 23 0 4
+¯ó³w 26 10 0 2
+¯ó³w 10 14 0 2
+¯ó³w 26 1 0 2
+¯ó³w 5 18 0 2
+¯ó³w 18 11 0 2
+¯ó³w 6 3 0 2
+¯ó³w 31 20 0 2
+¯ó³w 31 15 0 2
+¯ó³w 13 25 0 2
+¯ó³w 11 14 0 2
+¯ó³w 10 24 0 2
+¯ó³w 19 21 0 2
+¯ó³w 24 12 0 2
+¯ó³w 10 26 0 2
+¯ó³w 4 3 0 2
+¯ó³w 10 12 0 2
+¯ó³w 18 14 0 2
+¯ó³w 14 10 0 2
+¯ó³w 10 20 0 2
+¯ó³w 31 13 0 2
+¯ó³w 21 12 0 2
+¯ó³w 6 13 0 2
+¯ó³w 9 13 0 2
+¯ó³w 1 18 0 2
+BarszczSosnowskiego 12 16 0
+Guarana 17 23 0
+Mlecz 5 15 0
+Trawa 3 21 0
+WilczeJagody 8 14 0
+BarszczSosnowskiego 15 4 0
+Guarana 23 7 0
+Mlecz 19 8 0
+Trawa 5 7 0
+WilczeJagody 20 21 0
+BarszczSosnowskiego 13 9 0
+Guarana 33 16 0
+Mlecz 13 22 0
+Trawa 2 9 0
+WilczeJagody 12 26 0
+BarszczSosnowskiego 33 23 0
+Guarana 17 9 0
+Mlecz 3 0 0
+Trawa 30 3 0
+WilczeJagody 14 25 0
+BarszczSosnowskiego 5 14 0
+Guarana 5 13 0
+Mlecz 24 2 0
+Trawa 30 21 0
+WilczeJagody 0 14 0
+BarszczSosnowskiego 10 3 0
+Guarana 8 5 0
+Mlecz 25 17 0
+Trawa 21 13 0
+WilczeJagody 33 18 0
+BarszczSosnowskiego 21 20 0
+Guarana 4 20 0
+Mlecz 3 12 0
+Trawa 13 7 0
+WilczeJagody 30 2 0
+BarszczSosnowskiego 32 16 0
+Guarana 20 14 0
+Mlecz 6 7 0
+Trawa 26 18 0
+WilczeJagody 7 22 0
+BarszczSosnowskiego 25 25 0
+Guarana 1 9 0
+Mlecz 6 22 0
+Trawa 24 15 0
+WilczeJagody 31 21 0
+BarszczSosnowskiego 9 3 0
+Guarana 3 18 0
+Mlecz 22 9 0
+Trawa 12 21 0
+WilczeJagody 0 4 0
+BarszczSosnowskiego 20 12 0
+Guarana 23 24 0
+Mlecz 11 0 0
+Trawa 28 5 0
+WilczeJagody 30 22 0
+BarszczSosnowskiego 33 10 0
+Guarana 15 10 0
+Mlecz 12 13 0
+Trawa 0 21 0
+WilczeJagody 21 3 0
+BarszczSosnowskiego 15 21 0
+Guarana 0 23 0
+Mlecz 16 1 0
+Trawa 29 21 0
+WilczeJagody 16 19 0
+BarszczSosnowskiego 14 8 0
+Guarana 9 18 0
+Mlecz 9 5 0
+Trawa 11 16 0
+WilczeJagody 22 5 0
+BarszczSosnowskiego 30 0 0
+Guarana 23 15 0
+Mlecz 16 16 0
+Trawa 14 15 0
+WilczeJagody 2 17 0
+BarszczSosnowskiego 9 26 0
+Guarana 15 5 0
+Mlecz 29 7 0
+Trawa 13 2 0
+WilczeJagody 20 10 0
+BarszczSosnowskiego 25 5 0
+Guarana 8 26 0
+Mlecz 4 22 0
+Trawa 11 21 0
+WilczeJagody 2 18 0
+BarszczSosnowskiego 10 16 0
+Guarana 3 20 0
+Mlecz 12 8 0
+Trawa 25 4 0
+WilczeJagody 27 0 0
+BarszczSosnowskiego 4 8 0
+Guarana 16 20 0
+Mlecz 32 4 0
+Trawa 32 21 0
+WilczeJagody 28 17 0
+BarszczSosnowskiego 18 6 0
+Guarana 0 8 0
+Mlecz 27 20 0
+Trawa 28 9 0
+WilczeJagody 23 18 0
+BarszczSosnowskiego 18 20 0
+Guarana 20 5 0
+Mlecz 21 5 0
+Trawa 3 23 0
+WilczeJagody 25 6 0
+BarszczSosnowskiego 26 4 0
+Guarana 0 6 0
+Mlecz 1 16 0
+Trawa 33 0 0
+WilczeJagody 2 13 0
+BarszczSosnowskiego 31 5 0
+Guarana 32 7 0
+Mlecz 11 10 0
+Trawa 23 12 0
+WilczeJagody 10 1 0
+BarszczSosnowskiego 28 14 0
+Guarana 17 3 0
+Mlecz 22 21 0
+Trawa 8 9 0
+WilczeJagody 23 0 0
