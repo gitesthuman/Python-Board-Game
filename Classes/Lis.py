@@ -5,7 +5,7 @@ from Classes.Zwierze import Zwierze
 
 class Lis(Zwierze):
     def __init__(self, X, Y, swiat, wiek):
-        Zwierze.__init__(self, 'Lis', X, Y, swiat, wiek, 3, 7, False)
+        Zwierze.__init__(self, 'Fox', X, Y, swiat, wiek, 3, 7, False)
 
     def _losuj_pole(self, cords):
         kierunki = [False, False, False, False]  # 0-góra 1-dół 2-prawo 3-lewo
@@ -58,10 +58,10 @@ class Lis(Zwierze):
                 cords[0] -= 1
 
     def _rozmnazanie(self, x, y):
-        self._swiat.dodaj_info('Lisy rozmnażają się.')
+        self._swiat.dodaj_info('Foxes reproduce.')
         dziecko = Lis(x, y, self._swiat, 0)
         self._swiat.get_mapa()[x][y] = dziecko
         self._swiat.get_nowo_narodzone().add(dziecko)
 
     def rysowanie(self):
-        return (251, 100, 4)
+        return 251, 100, 4

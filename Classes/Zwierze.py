@@ -221,10 +221,10 @@ class Zwierze(Organizm):
                                 self._rozmnazanie(self._X - 1, y2)
 
         else: # walka
-            info = 'Walka! ' + napastnik.get_nazwa() + ' atakuje ' + self._nazwa + '! '
+            info = 'Fight! ' + napastnik.get_nazwa() + ' attacks ' + self._nazwa + '! '
             if napastnik.get_sila() >= self._sila:
-                info += napastnik.get_nazwa() + ' o sile ' + str(napastnik.get_sila()) \
-                        + ' pokonuje ' + self._nazwa + ' o sile ' + str(self._sila) + '!'
+                info += napastnik.get_nazwa() + ' (strength ' + str(napastnik.get_sila()) \
+                        + ') defeats ' + self._nazwa + ' (strength ' + str(self._sila) + ')!'
                 if self._swiat.get_organizmy().find_element(self._X, self._Y) != None:
                     self._swiat.get_organizmy().del_element(self._X, self._Y)
                 else:
@@ -237,8 +237,8 @@ class Zwierze(Organizm):
                 self._swiat.get_mapa()[self._X][self._Y].set_Y(self._Y)
 
             else:
-                info += self._nazwa + ' o sile ' + str(self._sila) + ' pokonuje ' \
-                        + napastnik.get_nazwa() + ' o sile ' + str(napastnik.get_sila()) + '!'
+                info += self._nazwa + ' (strength ' + str(self._sila) + ') defeats ' \
+                        + napastnik.get_nazwa() + ' (strength ' + str(napastnik.get_sila()) + ')!'
                 self._swiat.get_mapa()[napastnik.get_X()][napastnik.get_Y()] = None
                 if self._swiat.get_organizmy().find_element(napastnik.get_X(), napastnik.get_Y()):
                     self._swiat.get_organizmy().del_element(napastnik.get_X(), napastnik.get_Y())

@@ -7,7 +7,7 @@ class Guarana(Roslina):
 
     def kolizja(self, napastnik):
         Roslina.kolizja(self, napastnik)
-        info = '  zwiększenie siły z ' + str(napastnik.get_sila()) + ' do '
+        info = '  strength boost from ' + str(napastnik.get_sila()) + ' to '
 
         self._swiat.get_organizmy().find_element(self._X, self._Y).set_sila(self._swiat.get_organizmy().find_element(self._X, self._Y).get_sila() + 3)
         self._swiat.get_mapa()[self._X][self._Y].set_sila(self._swiat.get_organizmy().find_element(self._X, self._Y).get_sila())
@@ -16,10 +16,10 @@ class Guarana(Roslina):
         self._swiat.dodaj_info(info)
 
     def _rozmnazanie(self, x, y):
-        self._swiat.dodaj_info('Guarana rozprzestrzenia się.')
+        self._swiat.dodaj_info('Guarana spreads.')
         sadzonka = Guarana(x, y, self._swiat, 0)
         self._swiat.get_mapa()[x][y] = sadzonka
         self._swiat.get_nowo_narodzone().add(sadzonka)
 
     def rysowanie(self):
-        return (230, 0, 230)
+        return 230, 0, 230

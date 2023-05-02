@@ -6,7 +6,7 @@ from Classes.BarszczSosnowskiego import BarszczSosnowskiego
 
 class CyberOwca(Zwierze):
     def __init__(self, X, Y, swiat, wiek):
-        Zwierze.__init__(self, 'Cyber Owca', X, Y, swiat, wiek, 11, 4, True)
+        Zwierze.__init__(self, 'Cyber Sheep', X, Y, swiat, wiek, 11, 4, True)
 
     def akcja(self):
         MAX = self._swiat.get_szerokosc() + self._swiat.get_wysokosc()
@@ -55,11 +55,11 @@ class CyberOwca(Zwierze):
         else:
             Zwierze.akcja(self)
 
-    def _rozmnazanie(self,x,y):
-        self._swiat.dodaj_info('Cyber Owce rozmnażają się.')
+    def _rozmnazanie(self, x, y):
+        self._swiat.dodaj_info('Cyber Sheep reproduce.')
         dziecko = CyberOwca(x, y, self._swiat, 0)
         self._swiat.get_mapa()[x][y] = dziecko
         self._swiat.get_nowo_narodzone().add(dziecko)
 
     def rysowanie(self):
-        return (0, 0, 0)
+        return 0, 0, 0

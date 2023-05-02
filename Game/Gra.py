@@ -31,7 +31,7 @@ class Gra:
 
     def __wczytaj(self, sciezka):
         while not os.path.exists(sciezka):
-            sciezka = input("Podaj poprawna sciezke pliku: ")
+            sciezka = input("Give valid file path: ")
         plik = open(sciezka, "r")
 
         linia = plik.readline()
@@ -45,13 +45,13 @@ class Gra:
             elem = linia.split(' ')
             nazwa, x, y, wiek = str(elem[0]), int(elem[1]), int(elem[2]), int(elem[3])
 
-            if nazwa == "Antylopa":
+            if nazwa == "Antelope":
                 organizm = Antylopa(x, y, self.__nowyswiat, wiek)
-            elif nazwa == "BarszczSosnowskiego":
+            elif nazwa == "PineBorscht":
                 organizm = BarszczSosnowskiego(x, y, self.__nowyswiat, wiek)
-            elif nazwa == "CyberOwca":
+            elif nazwa == "CyberSheep":
                 organizm = CyberOwca(x, y, self.__nowyswiat, wiek)
-            elif nazwa == "Człowiek":
+            elif nazwa == "Human":
                 sila, czas, cd = int(elem[4]), int(elem[5]), int(elem[6])
                 organizm = Czlowiek(x, y, self.__nowyswiat, wiek, czas, cd)
                 organizm.set_sila(sila)
@@ -59,20 +59,22 @@ class Gra:
                 continue
             elif nazwa == "Guarana":
                 organizm = Guarana(x, y, self.__nowyswiat, wiek)
-            elif nazwa == "Lis":
+            elif nazwa == "Fox":
                 organizm = Lis(x, y, self.__nowyswiat, wiek)
-            elif nazwa == "Mlecz":
+            elif nazwa == "Dandelion":
                 organizm = Mlecz(x, y, self.__nowyswiat, wiek)
-            elif nazwa == "Owca":
+            elif nazwa == "Sheep":
                 organizm = Owca(x, y, self.__nowyswiat, wiek)
-            elif nazwa == "Trawa":
+            elif nazwa == "Grass":
                 organizm = Trawa(x, y, self.__nowyswiat, wiek)
-            elif nazwa == "WilczeJagody":
+            elif nazwa == "DeadlyNightshade":
                 organizm = WilczeJagody(x, y, self.__nowyswiat, wiek)
-            elif nazwa == "Wilk":
+            elif nazwa == "Wolf":
                 organizm = Wilk(x, y, self.__nowyswiat, wiek)
-            elif nazwa == "Żółw":
+            elif nazwa == "Tortoise":
                 organizm = Zolw(x, y, self.__nowyswiat, wiek)
+            else:
+                continue
 
             if isinstance(organizm, Zwierze):
                 organizm.set_sila(int(elem[4]))
@@ -102,14 +104,12 @@ class Gra:
 
         screen = pygame.display.set_mode((600, 400))
         white = (255, 255, 255)
-        color_light = (130, 130, 130)
-        color_dark = (100, 100, 100)
         font1 = pygame.font.SysFont('Arial', 18)
 
         szer = ''
         wys = ''
-        szer_napis = font1.render('Podaj szerokość świata: ', True, white)
-        wys_napis = font1.render('Podaj wysokość świata: ', True, white)
+        szer_napis = font1.render("World's width: ", True, white)
+        wys_napis = font1.render("World's height: ", True, white)
         zatwierdzone = False
 
         while not zatwierdzone:
@@ -195,7 +195,7 @@ class Gra:
         while N * M < MINIMAL:
             szer = ''
             wys = ''
-            komunikat = font1.render('Zbyt mały świat!', True, white)
+            komunikat = font1.render('The world is too small!', True, white)
             zatwierdzone = False
 
             while not zatwierdzone:
@@ -323,7 +323,7 @@ class Gra:
         for i in range(0, self.__nowyswiat.get_organizmy().get_size()):
             organizm = self.__nowyswiat.get_organizmy().get_current()
             nazwa = organizm.get_nazwa()
-            nazwa = re.sub(r"\s+", "", nazwa, flags=re.UNICODE) # usuwanie spacji z nazwy
+            nazwa = re.sub(r"\s+", "", nazwa, flags=re.UNICODE)  # usuwanie spacji z nazwy
 
             plik.write(nazwa+" ")
             plik.write(str(organizm.get_X()))
@@ -336,7 +336,7 @@ class Gra:
                 plik.write(" ")
                 plik.write(str(organizm.get_sila()))
 
-                if type(organizm) is Czlowiek:
+                if isinstance(organizm, Czlowiek):
                     plik.write(" ")
                     plik.write(str(organizm.get_czas_trwania_umiejetnosci()))
                     plik.write(" ")
@@ -363,8 +363,8 @@ class Gra:
             color_dark = (100, 100, 100)
             font1 = pygame.font.SysFont('Arial', 20)
 
-            zapisz = font1.render('Zapisz', True, white)
-            dalej = font1.render('Dalej', True, white)
+            zapisz = font1.render('Save', True, white)
+            dalej = font1.render('Next', True, white)
             menu = font1.render('Menu', True, white)
             akcja = False
             while not akcja:
@@ -376,10 +376,10 @@ class Gra:
                         sys.exit(0)
                     if ev.type == pygame.MOUSEBUTTONDOWN:
                         if ev.button == 1:
-                            if 30 <= mouse[0] <= 90 and height - 50 <= mouse[1] <= height - 20: # zapis
+                            if 30 <= mouse[0] <= 90 and height - 50 <= mouse[1] <= height - 20:  # zapis
                                 sciezka = ''
                                 zatwierdzone = False
-                                komunikat = font1.render("Podaj ścieżkę pliku: ", True, white)
+                                komunikat = font1.render("Give file's path: ", True, white)
 
                                 while not zatwierdzone:
                                     for ev in pygame.event.get():
@@ -428,23 +428,23 @@ class Gra:
 
                                 if self.__nowyswiat.get_mapa()[indexX][indexY] == None: # dodaj organizm
                                     posX = mouse[0]
-                                    posY = mouse[1]
+                                    posY = min(mouse[1], screen.get_height() - 12 * 12)
                                     dodano = False
                                     black = (0, 0, 0)
                                     smallfont = pygame.font.SysFont('Arial', 12)
 
-                                    dodaj = smallfont.render('Dodaj organizm:', True, black)
-                                    antylopa = smallfont.render('Antylopa', True, black)
-                                    barszcz = smallfont.render('Barszcz Sosnowskiego', True, black)
-                                    cyber = smallfont.render('Cyber Owca', True, black)
+                                    dodaj = smallfont.render('Add organism:', True, black)
+                                    antylopa = smallfont.render('Antelope', True, black)
+                                    barszcz = smallfont.render('Pine Borscht', True, black)
+                                    cyber = smallfont.render('Cyber Sheep', True, black)
                                     guarana = smallfont.render('Guarana', True, black)
-                                    lis = smallfont.render('Lis', True, black)
-                                    mlecz = smallfont.render('Mlecz', True, black)
-                                    owca = smallfont.render('Owca', True, black)
-                                    trawa = smallfont.render('Trawa', True, black)
-                                    jagody = smallfont.render('Wilcze Jagody', True, black)
-                                    wilk = smallfont.render('Wilk', True, black)
-                                    zolw = smallfont.render('Żółw', True, black)
+                                    lis = smallfont.render('Fox', True, black)
+                                    mlecz = smallfont.render('Dandelion', True, black)
+                                    owca = smallfont.render('Sheep', True, black)
+                                    trawa = smallfont.render('Grass', True, black)
+                                    jagody = smallfont.render('Deadly Nightshade', True, black)
+                                    wilk = smallfont.render('Wolf', True, black)
+                                    zolw = smallfont.render('Tortoise', True, black)
 
                                     while not dodano:
                                         mouse = pygame.mouse.get_pos()
@@ -598,12 +598,12 @@ class Gra:
             self.__nowyswiat.wyczysc_info()
             self.__nowyswiat.wykonaj_ture(screen)
 
-        self.__nowyswiat.dodaj_info('Człowiek umarł...')
+        self.__nowyswiat.dodaj_info('Human died...')
         self.__nowyswiat.rysuj_swiat(screen, 0, 0)
 
-        koniec = pygame.font.SysFont('Arial black', 20).render('KONIEC GRY', True, white)
-        gra = font1.render('Zagraj jeszcze raz', True, white)
-        wyjscie = font1.render('Wyjście', True, white)
+        koniec = pygame.font.SysFont('Arial black', 20).render('GAME OVER', True, white)
+        gra = font1.render('Play again', True, white)
+        wyjscie = font1.render('Exit', True, white)
 
         while True:
             mouse = pygame.mouse.get_pos()
@@ -649,9 +649,9 @@ class Gra:
         smallfont = pygame.font.SysFont('Arial', 16)
 
         nazwa = bigfont.render('The Organisms 2.0', True, white)
-        autor = smallfont.render('by Jakub Link 184469', True, white)
-        nowagra = font1.render('Nowa Gra', True, white)
-        wczytaj = font1.render('Wczytaj świat z pliku', True, white)
+        autor = smallfont.render('by Jakub Link', True, white)
+        nowagra = font1.render('New Game', True, white)
+        wczytaj = font1.render('Load from file', True, white)
 
         gra = False
         while not gra:
@@ -684,7 +684,7 @@ class Gra:
                     elif width / 2 - 100 <= mouse[0] <= width / 2 - 100 + 200 and 300 <= mouse[1] <= 300 + 30:
                         sciezka = ''
                         zatwierdzone = False
-                        komunikat = font1.render("Podaj ścieżkę pliku: ", True, white)
+                        komunikat = font1.render("Give file's path: ", True, white)
                         while not zatwierdzone:
                             for ev in pygame.event.get():
                                 if ev.type == pygame.QUIT:
@@ -708,7 +708,7 @@ class Gra:
                         while not os.path.exists(sciezka):
                             sciezka = ''
                             zatwierdzone = False
-                            komunikat = font1.render("Podaj poprawną ścieżkę pliku: ", True, white)
+                            komunikat = font1.render("Give valid file's path: ", True, white)
                             while not zatwierdzone:
                                 for ev in pygame.event.get():
                                     if ev.type == pygame.QUIT:

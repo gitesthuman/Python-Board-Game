@@ -4,10 +4,10 @@ from Classes.Zwierze import Zwierze
 
 class BarszczSosnowskiego(Roslina):
     def __init__(self, X, Y, swiat, wiek):
-        Roslina.__init__(self, 'Barszcz Sosnowskiego', X, Y, swiat, wiek, 10)
+        Roslina.__init__(self, 'Pine Borscht', X, Y, swiat, wiek, 10)
 
     def zabij(self, x, y):
-        info = 'Barszcz Sosnowskiego zabija ' + self._swiat.get_mapa()[x][y].get_nazwa() + '!'
+        info = f"{self._nazwa} kills {self._swiat.get_mapa()[x][y].get_nazwa()}!"
         self._swiat.dodaj_info(info)
 
         if self._swiat.get_organizmy().find_element(x, y):
@@ -49,14 +49,14 @@ class BarszczSosnowskiego(Roslina):
 
         if not self._swiat.get_mapa()[self._X][self._Y].odporny():
             self._swiat.get_mapa()[self._X][self._Y] = None
-            info = 'Barszcz Sosnowskiego zatruwa ' + napastnik.get_nazwa() + '!'
+            info = f"{self._nazwa} poisons {napastnik.get_nazwa()}!"
             self._swiat.dodaj_info(info)
 
-    def rozmnazanie(self,x,y):
-        self._swiat.dodaj_info('Barszcz Sosnowskiego rozprzestrzenia się.')
+    def rozmnazanie(self, x, y):
+        self._swiat.dodaj_info(f'{self._nazwa} spreads.')
         sadzonka = BarszczSosnowskiego(x, y, self._swiat, 0)
         self._swiat.get_mapa()[x][y] = sadzonka
         self._swiat.get_nowo_narodzone().add(sadzonka)
 
     def rysowanie(self):
-        return (255, 0, 0)
+        return 255, 0, 0

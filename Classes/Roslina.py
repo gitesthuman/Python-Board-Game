@@ -8,7 +8,7 @@ class Roslina(Organizm):
         Organizm.__init__(self, nazwa, X, Y, swiat, wiek, sila, 0)
 
     def _losujPole(self, cords):
-        kierunki = [False, False, False, False] #0-góra 1-dół 2-prawo 3-lewo
+        kierunki = [False, False, False, False] # 0-góra 1-dół 2-prawo 3-lewo
         if cords[1] < self._swiat.get_wysokosc() - 1 and self._swiat.get_mapa()[self._X][self._Y + 1] == None:
             kierunki[0] = True
         if cords[1] > 0 and self._swiat.get_mapa()[self._X][self._Y - 1] == None:
@@ -24,7 +24,7 @@ class Roslina(Organizm):
                 ileKierunkow += 1
 
         if ileKierunkow > 0:
-            kierunek = random.randint(0, ileKierunkow - 1) #index kierunku (spośród możliwych)
+            kierunek = random.randint(0, ileKierunkow - 1) # index kierunku (spośród możliwych)
             licznik = -1
             for i in range(0, 4):
                 if (kierunki[i]):
@@ -50,7 +50,7 @@ class Roslina(Organizm):
                 self._rozmnazanie(cords[0], cords[1])
 
     def kolizja(self, napastnik):
-        info = napastnik.get_nazwa() + ' zjada ' + self._nazwa + '!'
+        info = napastnik.get_nazwa() + ' eats ' + self._nazwa + '!'
         self._swiat.dodaj_info(info)
 
         if self._swiat.get_organizmy().find_element(self._X, self._Y) != None:

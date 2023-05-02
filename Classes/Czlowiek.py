@@ -6,7 +6,7 @@ from Classes.Zwierze import Zwierze
 
 class Czlowiek(Zwierze):
     def __init__(self, X, Y, swiat, wiek, czas_trwania_umiejetnosci, cool_down_umiejetnosci):
-        Zwierze.__init__(self, 'Człowiek', X, Y, swiat, wiek, 5, 4, False)
+        Zwierze.__init__(self, 'Human', X, Y, swiat, wiek, 5, 4, False)
         self.__czas_trwania_umiejetnosci = czas_trwania_umiejetnosci
         self.__cool_down_umiejetnosci = cool_down_umiejetnosci
 
@@ -28,16 +28,16 @@ class Czlowiek(Zwierze):
                 if ev.type == pygame.QUIT:
                     sys.exit(0)
                 if ev.type == pygame.KEYDOWN:
-                    if ev.key == pygame.K_UP and y < self._swiat.get_wysokosc() - 1: # ruch w górę
+                    if ev.key == pygame.K_UP and y < self._swiat.get_wysokosc() - 1:  # ruch w górę
                         y += 1
                         ruch = True
-                    elif ev.key == pygame.K_DOWN and y > 0: # ruch w dół
+                    elif ev.key == pygame.K_DOWN and y > 0:  # ruch w dół
                         y -= 1
                         ruch = True
-                    elif ev.key == pygame.K_RIGHT and x < self._swiat.get_szerokosc() - 1: # ruch w prawo
+                    elif ev.key == pygame.K_RIGHT and x < self._swiat.get_szerokosc() - 1:  # ruch w prawo
                         x += 1
                         ruch = True
-                    elif ev.key == pygame.K_LEFT and x > 0: # ruch w lewo
+                    elif ev.key == pygame.K_LEFT and x > 0:  # ruch w lewo
                         x -= 1
                         ruch = True
                     elif ev.key == pygame.K_x and \
@@ -45,7 +45,7 @@ class Czlowiek(Zwierze):
                             self.__cool_down_umiejetnosci == 0: # super umiejętność
                         self.__czas_trwania_umiejetnosci = 5
                         self.__cool_down_umiejetnosci = 5
-                        self._swiat.dodaj_info('Całopalenie aktywowane!')
+                        self._swiat.dodaj_info('Holocaust activated!')
                         self._swiat.rysuj_swiat(screen, scrollX, scrollY)
 
                 if ev.type == pygame.MOUSEBUTTONDOWN: # przesuwanie zawartości komunikatów
@@ -86,7 +86,7 @@ class Czlowiek(Zwierze):
             return False
 
     def pal(self, x, y):
-        info = 'Człowiek spala ' + self._swiat.get_mapa()[x][y].get_nazwa() + '!'
+        info = 'Human burns ' + self._swiat.get_mapa()[x][y].get_nazwa() + '!'
         self._swiat.dodaj_info(info)
 
         if (self._swiat.get_organizmy().find_element(x, y)):
@@ -112,4 +112,4 @@ class Czlowiek(Zwierze):
         return self.__cool_down_umiejetnosci
 
     def rysowanie(self):
-        return (0, 0, 255)
+        return 0, 0, 255

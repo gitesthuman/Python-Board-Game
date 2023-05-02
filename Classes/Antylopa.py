@@ -5,7 +5,7 @@ from Classes.Zwierze import Zwierze
 
 class Antylopa(Zwierze):
     def __init__(self, X, Y, swiat, wiek):
-        Zwierze.__init__(self, 'Antylopa', X, Y, swiat, wiek, 4, 4, False)
+        Zwierze.__init__(self, 'Antelope', X, Y, swiat, wiek, 4, 4, False)
 
     def kolizja(self, napastnik):
         if self._nazwa != napastnik.get_nazwa() and random.randint(1, 2) == 1: # unik
@@ -25,10 +25,10 @@ class Antylopa(Zwierze):
                 if kierunki[i]:
                     ileKierunkow += 1
 
-            if ileKierunkow > 0: # unik udany
-                info = str(napastnik.get_nazwa()) + ' atakuje Antylopa! Antylopa robi unik!'
+            if ileKierunkow > 0:  # unik udany
+                info = f"{napastnik.get_nazwa()} attacks {self._nazwa}! {self._nazwa} dodges!"
                 self._swiat.dodaj_info(info)
-                kierunek = random.randint(0, ileKierunkow - 1) # index kierunku (spośród możliwych)
+                kierunek = random.randint(0, ileKierunkow - 1)  # index kierunku (spośród możliwych)
                 licznik = -1
                 for i in range(0, 4):
                     if (kierunki[i]):
@@ -40,13 +40,13 @@ class Antylopa(Zwierze):
                 x = self._X
                 y = self._Y
 
-                if index == 0: # góra
+                if index == 0:  # góra
                     self._ruch(self._X, self._Y + 1)
-                elif index == 1: # dół
+                elif index == 1:  # dół
                     self._ruch(self._X, self._Y - 1)
-                elif index == 2: # prawo
+                elif index == 2:  # prawo
                     self._ruch(self._X + 1, self._Y)
-                elif index == 3: # lewo
+                elif index == 3:  # lewo
                     self._ruch(self._X - 1, self._Y)
 
                 self._swiat.get_mapa()[napastnik.get_X()][napastnik.get_Y()] = None
@@ -61,7 +61,7 @@ class Antylopa(Zwierze):
         Zwierze.kolizja(self, napastnik)
 
     def _losuj_pole(self, cords):
-        kierunki = [False, False, False, False, False, False, False, False] #0-góra 1-dół 2-prawo 3-lewo 4-góra2 5-dół2 6-prawo2 7-lewo2
+        kierunki = [False, False, False, False, False, False, False, False]  # 0-góra 1-dół 2-prawo 3-lewo 4-góra2 5-dół2 6-prawo2 7-lewo2
 
         if cords[1] < self._swiat.get_wysokosc() - 1:
             kierunki[0] = True
@@ -81,42 +81,42 @@ class Antylopa(Zwierze):
             kierunki[7] = True
 
         ileKierunkow = 0
-        for i in range (0, 8):
-            if (kierunki[i]):
+        for i in range(0, 8):
+            if kierunki[i]:
                 ileKierunkow += 1
 
-        kierunek = random.randint(0, ileKierunkow - 1) # index kierunku(spośród możliwych)
+        kierunek = random.randint(0, ileKierunkow - 1)  # index kierunku(spośród możliwych)
         licznik = -1
         index = -1
         for i in range(0, 8):
-            if (kierunki[i]):
+            if kierunki[i]:
                 licznik += 1
             if licznik == kierunek:
                 index = i
                 break
 
-        if index == 0: # góra
+        if index == 0:  # góra
             cords[1] += 1
-        elif index == 1: # dół
+        elif index == 1:  # dół
             cords[1] -= 1
-        elif index == 2: # prawo
+        elif index == 2:  # prawo
             cords[0] += 1
-        elif index == 3: # lewo
-           cords[0] -= 1
-        elif index == 4: # góra2
+        elif index == 3:  # lewo
+            cords[0] -= 1
+        elif index == 4:  # góra2
             cords[1] += 2
-        elif index == 5: # dół2
+        elif index == 5:  # dół2
             cords[1] -= 2
-        elif index == 6: # prawo2
+        elif index == 6:  # prawo2
             cords[0] += 2
-        elif index == 7: # lewo2
+        elif index == 7:  # lewo2
             cords[0] -= 2
 
     def _rozmnazanie(self, x, y):
-        self._swiat.dodaj_info('Antylopy rozmnażają się.')
+        self._swiat.dodaj_info('Antelopes reproduce.')
         dziecko = Antylopa(x, y, self._swiat, 0)
         self._swiat.get_mapa()[x][y] = dziecko
         self._swiat.get_nowo_narodzone().add(dziecko)
 
     def rysowanie(self):
-        return (255, 204, 102)
+        return 255, 204, 102
